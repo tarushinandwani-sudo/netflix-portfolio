@@ -7,59 +7,77 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Logo" class="nav__logo">
-        <div class="nav__links">
-            <span>Home</span>
-            <span>Leadership</span>
-            <span>Experience</span>
-            <span>Contact</span>
-        </div>
-    </nav>
 
-    <header class="hero">
-        <div class="hero__contents">
-            <h1 class="hero__title">THE PRESIDENT</h1>
-            <div class="hero__buttons">
-                <button class="hero__button">Play (View Projects)</button>
-                <button class="hero__button">My List</button>
+    <div id="profile-screen" class="profile-screen">
+        <h1>Who's watching?</h1>
+        <div class="profile-container">
+            <div class="profile" onclick="selectProfile()">
+                <div class="profile-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Tara">
+                </div>
+                <span>Tara</span>
             </div>
-            <p class="hero__description">
-                Leading the Artificial Intelligence Society (AISOC) at UNSW. 
-                99% Match | 2024 - 2025 | Drama & Innovation
-            </p>
+            <div class="profile" onclick="selectProfile()">
+                <div class="profile-icon guest">
+                    <span>+</span>
+                </div>
+                <span>Recruiter</span>
+            </div>
         </div>
-        <div class="hero--fadeBottom"></div>
-    </header>
+        <button class="manage-profiles">MANAGE PROFILES</button>
+    </div>
 
-    <div class="row">
-        <h2>Trending Now: Campus Leadership</h2>
-        <div class="row__posters">
-            <div class="poster__item">
-                <div class="poster__title">AISOC President</div>
+    <div id="main-content" class="main-content hidden">
+        <nav class="nav">
+            <h1 class="logo">TARA-FLIX</h1>
+            <div class="nav__right">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile" class="nav__avatar">
             </div>
-            <div class="poster__item">
-                <div class="poster__title">Events Director</div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero__contents">
+                <h1 class="hero__title">THE PRESIDENT</h1>
+                <p class="hero__description">
+                    98% Match | 2025 | 1 Season | Lead Role <br>
+                    Leading governance and operational management of AISOC UNSW, 
+                    delivering high-impact tech conferences like AICON.
+                </p>
+                <div class="hero__buttons">
+                    <button class="btn btn--play">▶ Play</button>
+                    <button class="btn btn--list">+ My List</button>
+                </div>
             </div>
-            <div class="poster__item">
-                <div class="poster__title">WIM Secretary</div>
+            <div class="hero--fadeBottom"></div>
+        </header>
+
+        <div class="row">
+            <h2>The UTS Indian Society Franchise</h2>
+            <div class="row__posters">
+                <div class="poster__card">
+                    <div class="poster__info">
+                        <h3>UTS: Part 2</h3>
+                        <p>Events Director (2026)</p>
+                    </div>
+                </div>
+                <div class="poster__card">
+                    <div class="poster__info">
+                        <h3>UTS: Part 1</h3>
+                        <p>Events Coordinator (2025)</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <h2>Fan Favorites: Hospitality & Service</h2>
-        <div class="row__posters">
-            <div class="poster__item">
-                <div class="poster__title">Ooshman All-Rounder</div>
-            </div>
-            <div class="poster__item">
-                <div class="poster__title">McDonald's Crew</div>
-            </div>
-            <div class="poster__item">
-                <div class="poster__title">Mansions FOH</div>
-            </div>
-        </div>
-    </div>
+    <script>
+        function selectProfile() {
+            document.getElementById('profile-screen').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('profile-screen').style.display = 'none';
+                document.getElementById('main-content').classList.remove('hidden');
+            }, 500);
+        }
+    </script>
 </body>
 </html>
